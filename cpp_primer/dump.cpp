@@ -22,3 +22,21 @@ int main() {
     cout << *y << "\t" << y << "\t" << x << endl;
     return 0;
 }
+
+//Exercise 2.22: Assuming p is a pointer to int, explain the following code:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i(19);
+    int *x(nullptr);
+    if (x)
+    {
+        cout << "add" << endl;
+    }
+    if (*x)
+    {
+        cout << "value" << endl;
+    }
+    return 0;
+}
