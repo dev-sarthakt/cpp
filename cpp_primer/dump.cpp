@@ -1,4 +1,4 @@
-//Exercise 2.18: Write code to change the value of a pointer. Write code to change the value to which the pointer points.
+//Exercise 2.18:
 #include <iostream>
 using namespace std;
 int main() {
@@ -10,7 +10,7 @@ int main() {
     return 0; 
 }
 
-//Exercise 2.20: What does the following program do?
+//Exercise 2.20:
 #include <iostream>
 using namespace std;
 
@@ -23,7 +23,7 @@ int main() {
     return 0;
 }
 
-//Exercise 2.22: Assuming p is a pointer to int, explain the following code:
+//Exercise 2.22:
 #include <iostream>
 using namespace std;
 
@@ -38,5 +38,16 @@ int main() {
     {
         cout << "value" << endl;
     }
+    return 0;
+}
+
+//Exercise 2.32
+#include <iostream>
+using namespace std;
+
+int main() {
+    int null(0);
+    int *p(&null);
+    cout << *p << endl;
     return 0;
 }
