@@ -51,3 +51,35 @@ int main() {
     cout << *p << endl;
     return 0;
 }
+#include <iostream>
+using namespace std;
+
+struct Sales_item {
+    unsigned int unitsSold = 0;
+    double revenue() {
+        return {unitsSold*3.14159};
+    };
+};
+
+//Exercise 2.40:
+#include <iostream>
+using namespace std;
+
+struct Sales_item {
+    double unitsSold = 0;
+    double revenue() {
+        return {unitsSold*3.14159};
+    };
+};
+
+int main() {
+    Sales_item books;
+    while (true)
+    {
+        double temp(0);
+        cin >> temp;
+        books.unitsSold = temp;
+        cout << books.revenue() << "\n";
+    }
+    return 0;
+}
