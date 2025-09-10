@@ -274,3 +274,46 @@ int main() {
     }
     return 0;
 }
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+typedef string str;
+
+int main() {
+    str line, templ;
+    while (getline(cin, line))
+    {
+        for (auto c : line)
+            templ += toupper(c);
+        cout << templ << endl;
+        templ.clear();  
+    }
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+typedef string str;
+
+int main() {
+    str line;
+    while (getline(cin, line))
+    {
+        for (auto &c : line)
+            c = toupper(c);
+        cout << line << endl; 
+    }
+    return 0;
+}
