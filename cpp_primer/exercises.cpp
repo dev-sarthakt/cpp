@@ -242,3 +242,35 @@ int main() {
     cout << s << endl;
     return 0;
 }
+
+//Random:
+
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+typedef string str;
+
+int main() {
+    char tempc;
+    str line, templ;
+    while (getline(cin, line))
+    {
+        for (char c : line)
+            if (c >= 97 && c <= 122)
+            {
+                tempc = c - 32;
+                templ += tempc;
+            }
+            else {
+                templ += c;
+            }
+        cout << templ << endl;
+        templ.clear();  
+    }
+    return 0;
+}
