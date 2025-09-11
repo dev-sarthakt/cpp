@@ -317,3 +317,63 @@ int main() {
     }
     return 0;
 }
+
+//Exercise 3.14:
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+typedef string str;
+
+int main() {
+    vector<int> ivec;
+    int i;
+    while (cin >> i)
+    {
+        ivec.push_back(i);
+        cout << "\n";
+        for (int i : ivec)
+        {
+            cout << i << endl;
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+//Exercise 3.15:
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+typedef string str;
+
+int main() {
+    vector<str> ivec;
+    str i;
+    while (cin >> i)
+    {
+        ivec.push_back(i);
+        cout << "\n";
+        for (str i : ivec)
+        {
+            cout << i << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
