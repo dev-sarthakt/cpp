@@ -25,11 +25,17 @@ class Mat{
         ~Mat(){
             ;
         };
+        vector<double> row(int r);
+        vector<double> col(int c);
         Mat& operator=(const Mat &a);
         double& operator()(int r, int c);
+        Mat& operator+=(Mat& a);
         friend bool operator==(const Mat &a, const Mat &b);
         friend Mat operator+(const Mat &a, const Mat &b);
+        friend ostream& operator<<(ostream& os, Mat a);
 };
+
+
 
 Mat& Mat::operator=(const Mat &a){
     if (r != a.r || c != a.c)
@@ -84,6 +90,45 @@ bool operator==(const Mat &a, const Mat &b){
     }
 }
 
+ostream& operator<<(ostream& os,  Mat a){
+    for (int i = 0; i < a.r; i++)
+    {
+        if (i != 0)
+        {
+            os << "\n";
+        }
+        
+        for (int j = 0; j < a.c; j++)
+        {
+            os <<  a(i+1, j+1) << "\t";
+        }
+        
+    }
+    return os;
+}
+
+Mat& Mat::operator+=(Mat& a){
+    return *this = *this + a;
+}
+
+vector<double> Mat::row(int r){
+    vector<double> temp;
+    for (int i = 0; i < this->c; i++)
+    {
+        temp.push_back((*this)(r, i+1));
+    }
+    return temp;
+}
+
+vector<double> Mat::col(int c){
+    vector<double> temp;
+    for (int i = 0; i < this->r; i++)
+    {
+        temp.push_back((*this)(i+1, c));
+    }
+    return temp;
+}
+
 int main(){
     Mat m1(3,3), m2(3,3), m3(3,3);
     m1  = {1,2,3,4,5,6,7,8,9};
@@ -103,6 +148,14 @@ int main(){
             }
         }
         
+    }
+    cout  << (m1+m2) << endl;
+    
+    cout << (m1+=m2) << endl;
+
+    for (double x : m2.col(1))
+    {
+        cout << x << endl;
     }
     
     return 0;
